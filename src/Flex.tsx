@@ -1,15 +1,17 @@
 import React, { useMemo } from 'react';
-import { FlexStyle, View, ViewProps } from 'react-native';
+import type { FlexStyle, ViewStyle } from 'react-native';
+import type { BoxProps } from './Box';
+import Box from './Box';
 
-export interface FlexProps extends ViewProps {
+export interface FlexProps extends BoxProps {
   /**
-   * Determines how much the `<View />` will fill on the available space along the main axis.
-   * Shorthand for `flex` (If `true` is passed, `flex` will be set to `1`).
+   * Shorthand for the `flex` style property.
+   * If `true` is passed, the `flex` style property will be set to `1`.
    */
   fill?: boolean | number;
 
   /**
-   * Shorthand for `{ flexDirection: "row }"`.
+   * Shorthand for `{ flexDirection: "row" }`.
    */
   inline?: boolean;
 
@@ -19,52 +21,50 @@ export interface FlexProps extends ViewProps {
   center?: boolean;
 
   /**
-   * Controls the direction in which the children of the `<View />` are laid out.
-   * Shorthand for `flexDirection`.
+   * Shorthand for the `flexDirection` style property.
    */
   direction?: FlexStyle['flexDirection'];
 
   /**
-   * Describes how to align children within the main axis of the `<View />`.
-   * Shorthand for `justifyContent`.
+   * Shorthand for the `justifyContent` style property.
+   * If `center` prop is set to `true`, `justifyContent` will be set to `center`.
    */
   justify?: 'start' | 'end' | 'center' | 'between' | 'around' | 'evenly';
 
   /**
-   * Describes how to align children within the cross axis of the `<View />`.
-   * Shorthand for `alignItems`.
+   * Shorthand for the `alignItems` style property.
+   * If `center` prop is set to `true`, `alignItems` will be set to `center`.
    */
   items?: 'start' | 'end' | 'center' | 'stretch' | 'baseline';
 
   /**
-   * Shorthand for `alignSelf`.
+   * Shorthand for the `alignSelf` style property.
    */
   self?: 'auto' | 'start' | 'end' | 'center' | 'stretch' | 'baseline';
 
   /**
-   * Defines the distribution of lines along the cross-axis. This only has effect when items are wrapped to multiple lines using `flexWrap`.
-   * Shorthand for `alignContent`.
+   * Shorthand for the `alignContent` style property.
    */
   content?: 'start' | 'end' | 'center' | 'stretch' | 'between' | 'around';
 
   /**
-   * Controls what happens when children overflow the size of the `<View />` along the main axis.
-   * Shorthand for `flexWrap` (If `true` is passed, `flexWrap` will be set to `"wrap"`).
+   * Shorthand for the `flexWrap` style property.
+   * If `true` is passed, the `flexWrap` style property will be set to `wrap`.
    */
   wrap?: boolean | FlexStyle['flexWrap'];
 
   /**
-   * Shorthand for `flexBasis`.
+   * Shorthand for the `flexBasis` style property.
    */
   basis?: FlexStyle['flexBasis'];
 
   /**
-   * Shorthand for `flexGrow`.
+   * Shorthand for the `flexGrow` style property.
    */
   grow?: FlexStyle['flexGrow'];
 
   /**
-   * Shorthand for `flexShrink`.
+   * Shorthand for the `flexShrink` style property.
    */
   shrink?: FlexStyle['flexShrink'];
 }
@@ -85,7 +85,18 @@ const Flex: React.FC<FlexProps> = ({
   style,
   ...rest
 }) => {
+  const flex = useMemo(
+    () => (typeof fill === 'boolean' ? (fill ? 1 : undefined) : fill),
+    [fill]
+  );
+
+  const flexDirection = useMemo(
+    () => (inline ? 'row' : direction),
+    [inline, direction]
+  );
+
   const justifyContent = useMemo(() => {
+    if (center) return 'center';
     switch (justify) {
       case 'start':
         return 'flex-start';
@@ -100,9 +111,10 @@ const Flex: React.FC<FlexProps> = ({
       default:
         return justify;
     }
-  }, [justify]);
+  }, [center, justify]);
 
   const alignItems = useMemo(() => {
+    if (center) return 'center';
     switch (items) {
       case 'start':
         return 'flex-start';
@@ -111,7 +123,7 @@ const Flex: React.FC<FlexProps> = ({
       default:
         return items;
     }
-  }, [items]);
+  }, [center, items]);
 
   const alignSelf = useMemo(() => {
     switch (self) {
@@ -139,29 +151,39 @@ const Flex: React.FC<FlexProps> = ({
     }
   }, [content]);
 
-  return (
-    <View
-      style={[
-        {
-          flex: typeof fill === 'boolean' ? (fill ? 1 : undefined) : fill,
-          flexDirection: direction,
-          justifyContent,
-          alignItems,
-          alignSelf,
-          alignContent,
-          flexWrap:
-            typeof wrap === 'boolean' ? (wrap ? 'wrap' : undefined) : wrap,
-          flexBasis: basis,
-          flexGrow: grow,
-          flexShrink: shrink,
-        },
-        inline && { flexDirection: 'row' },
-        center && { justifyContent: 'center', alignItems: 'center' },
-        style,
-      ]}
-      {...rest}
-    />
+  const flexWrap = useMemo(
+    () => (typeof wrap === 'boolean' ? (wrap ? 'wrap' : undefined) : wrap),
+    [wrap]
   );
+
+  const flexStyle = useMemo(
+    (): ViewStyle => ({
+      flex,
+      flexDirection,
+      justifyContent,
+      alignItems,
+      alignSelf,
+      alignContent,
+      flexWrap,
+      flexBasis: basis,
+      flexGrow: grow,
+      flexShrink: shrink,
+    }),
+    [
+      flex,
+      flexDirection,
+      justifyContent,
+      alignItems,
+      alignSelf,
+      alignContent,
+      flexWrap,
+      basis,
+      grow,
+      shrink,
+    ]
+  );
+
+  return <Box style={[flexStyle, style]} {...rest} />;
 };
 
 export default Flex;
