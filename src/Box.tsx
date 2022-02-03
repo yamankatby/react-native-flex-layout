@@ -4,122 +4,122 @@ import { useSpacing } from './SpacingFuncContext';
 
 export interface BoxProps extends ViewProps {
   /**
-   * Shorthand for the `height` property.
+   * Shorthand for the `height` style property.
    */
   h?: FlexStyle['height'];
 
   /**
-   * Shorthand for the `minHeight` property.
+   * Shorthand for the `minHeight` style property.
    */
   minH?: FlexStyle['minHeight'];
 
   /**
-   * Shorthand for the `maxHeight` property.
+   * Shorthand for the `maxHeight` style property.
    */
   maxH?: FlexStyle['maxHeight'];
 
   /**
-   * Shorthand for the `width` property.
+   * Shorthand for the `width` style property.
    */
   w?: FlexStyle['width'];
 
   /**
-   * Shorthand for the `minWidth` property.
+   * Shorthand for the `minWidth` style property.
    */
   minW?: FlexStyle['minWidth'];
 
   /**
-   * Shorthand for the `maxWidth` property.
+   * Shorthand for the `maxWidth` style property.
    */
   maxW?: FlexStyle['maxWidth'];
 
   /**
-   * Shorthand for the `margin` property.
+   * Shorthand for the `margin` style property.
    */
   m?: FlexStyle['margin'];
 
   /**
-   * Shorthand for the `marginTop` property.
+   * Shorthand for the `marginTop` style property.
    */
   mt?: FlexStyle['marginTop'];
 
   /**
-   * Shorthand for the `marginRight` property.
+   * Shorthand for the `marginRight` style property.
    */
   mr?: FlexStyle['marginRight'];
 
   /**
-   * Shorthand for the `marginBottom` property.
+   * Shorthand for the `marginBottom` style property.
    */
   mb?: FlexStyle['marginBottom'];
 
   /**
-   * Shorthand for the `marginLeft` property.
+   * Shorthand for the `marginLeft` style property.
    */
   ml?: FlexStyle['marginLeft'];
 
   /**
-   * Shorthand for the `marginStart` property.
+   * Shorthand for the `marginStart` style property.
    */
   ms?: FlexStyle['marginStart'];
 
   /**
-   * Shorthand for the `marginEnd` property.
+   * Shorthand for the `marginEnd` style property.
    */
   me?: FlexStyle['marginEnd'];
 
   /**
-   * Shorthand for the `marginHorizontal` property.
+   * Shorthand for the `marginHorizontal` style property.
    */
   mh?: FlexStyle['marginHorizontal'];
 
   /**
-   * Shorthand for the `marginVertical` property.
+   * Shorthand for the `marginVertical` style property.
    */
   mv?: FlexStyle['marginVertical'];
 
   /**
-   * Shorthand for the `padding` property.
+   * Shorthand for the `padding` style property.
    */
   p?: FlexStyle['padding'];
 
   /**
-   * Shorthand for the `paddingTop` property.
+   * Shorthand for the `paddingTop` style property.
    */
   pt?: FlexStyle['paddingTop'];
 
   /**
-   * Shorthand for the `paddingRight` property.
+   * Shorthand for the `paddingRight` style property.
    */
   pr?: FlexStyle['paddingRight'];
 
   /**
-   * Shorthand for the `paddingBottom` property.
+   * Shorthand for the `paddingBottom` style property.
    */
   pb?: FlexStyle['paddingBottom'];
 
   /**
-   * Shorthand for the `paddingLeft` property.
+   * Shorthand for the `paddingLeft` style property.
    */
   pl?: FlexStyle['paddingLeft'];
 
   /**
-   * Shorthand for the `paddingStart` property.
+   * Shorthand for the `paddingStart` style property.
    */
   ps?: FlexStyle['paddingStart'];
 
   /**
-   * Shorthand for the `paddingEnd` property.
+   * Shorthand for the `paddingEnd` style property.
    */
   pe?: FlexStyle['paddingEnd'];
 
   /**
-   * Shorthand for the `paddingHorizontal` property.
+   * Shorthand for the `paddingHorizontal` style property.
    */
   ph?: FlexStyle['paddingHorizontal'];
 
   /**
-   * Shorthand for the `paddingVertical` property.
+   * Shorthand for the `paddingVertical` style property.
    */
   pv?: FlexStyle['paddingVertical'];
 }
