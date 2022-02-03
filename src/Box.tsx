@@ -1,13 +1,6 @@
 import React, { useMemo } from 'react';
 import { FlexStyle, View, ViewProps } from 'react-native';
-
-export type Spacing = string | number;
-
-export const useSpacing = (spacing?: number | string) =>
-  useMemo(
-    () => (typeof spacing === 'number' ? spacing * 4 : spacing),
-    [spacing]
-  );
+import { useSpacing } from './SpacingFuncContext';
 
 export interface BoxProps extends ViewProps {
   /**
