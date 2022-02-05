@@ -2,13 +2,13 @@ export { default as Box, BoxProps } from './Box';
 export { default as Divider, DividerProps } from './Divider';
 export { default as Flex, FlexProps } from './Flex';
 export {
-  default as Select,
-  SelectProps,
+  default as Selector,
+  SelectorProps,
   firstChild,
   notFirstChild,
   notLastChild,
   lastChild,
-} from './Select';
+} from './Selector';
 export { default as Spacer, SpacerProps } from './Spacer';
 export {
   Spacing,
