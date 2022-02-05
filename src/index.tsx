@@ -1,6 +1,14 @@
 export { default as Box, BoxProps } from './Box';
 export { default as Divider, DividerProps } from './Divider';
 export { default as Flex, FlexProps } from './Flex';
+export {
+  default as Select,
+  SelectProps,
+  firstChild,
+  notFirstChild,
+  notLastChild,
+  lastChild,
+} from './Select';
 export { default as Spacer, SpacerProps } from './Spacer';
 export {
   Spacing,
@@ -10,7 +18,7 @@ export {
   useSpacingFunc,
   useSpacing,
   SpacingFuncProviderProps,
-  SpacingFuncProvider
+  SpacingFuncProvider,
 } from './SpacingFuncContext';
 export {
   default as Stack,
@@ -18,5 +26,5 @@ export {
   HStack,
   HStackProps,
   VStack,
-  VStackProps
+  VStackProps,
 } from './Stack';
