@@ -1,74 +1,59 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 import { View } from 'react-native';
-import Flex, { FlexProps } from './Flex';
-import Divider from './Divider';
+import type { FlexProps } from './Flex';
+import Flex from './Flex';
 
 export interface StackProps extends FlexProps {
   /**
-   * The spacing to leave between items.
+   * The spacing between items in the stack.
    *
    * @default 0
    */
   spacing?: number;
 
   /**
-   * Whether to show dividers between items. By default, will use the `<Divider />` component. You can also pass a custom component.
+   * If `true`, each stack item will show a divider.
    *
    * @default false
    */
-  divider?: boolean | React.ReactNode;
+  divider?: boolean | React.ReactElement;
+
+  /**
+   * If `true`, the children will be wrapped in a `Box` and the `Box` will take the spacing properties.
+   *
+   * @default false
+   */
+  shouldWrapChildren?: boolean;
 }
 
 const Stack: React.FC<StackProps> = ({
   spacing = 0,
   divider = false,
+  shouldWrapChildren = false,
   children,
   ...rest
 }) => {
-  const dividerElement = useMemo(
-    () =>
-      typeof divider === 'boolean' ? divider ? <Divider /> : null : divider,
-    [divider]
-  );
-
-  const separatorStyle = useMemo(() => {
-    if (!spacing) return undefined;
-
-    const dir = rest.inline ? 'row' : rest.direction ?? 'column';
-    const spacingValue = spacing * 4;
-
-    if (!!dividerElement) {
-      return dir === 'row' || dir === 'row-reverse'
-        ? { marginHorizontal: spacingValue }
-        : { marginVertical: spacingValue };
-    }
-
-    return dir === 'row' || dir === 'row-reverse'
-      ? { marginStart: spacingValue }
-      : { marginTop: spacingValue };
-  }, [dividerElement, spacing, rest.direction, rest.inline]);
-
-  const validElements = React.Children.toArray(children).filter((child) =>
-    React.isValidElement(child)
-  ) as React.ReactElement[];
-
-  const items = validElements.map((child, index) => {
-    const key = typeof child.key !== 'undefined' ? child.key : index;
-    const isLast = index === validElements.length - 1;
-
-    return (
-      <React.Fragment key={key}>
-        {child}
-        {!isLast && <View style={separatorStyle}>{dividerElement}</View>}
-      </React.Fragment>
-    );
-  });
-
-  if (!spacing && !divider) {
-    return <Flex {...rest}>{children}</Flex>;
-  }
-
-  return <Flex {...rest}>{items}</Flex>;
+  return <Flex {...rest}>{children}</Flex>;
 };
 
 export default Stack;
+
+const StackItem: React.FC = ({ children }) => {
+  return <View>{children}</View>;
+};
+
+export interface HStackProps extends Omit<StackProps, 'inline' | 'direction'> {
+  reverse?: boolean;
+}
+
+export const HStack: React.FC<HStackProps> = ({ reverse, ...rest }) => {
+  return <Stack {...rest} direction={reverse ? 'row-reverse' : 'row'} />;
+};
+
+export interface VStackProps extends Omit<StackProps, 'inline' | 'direction'> {
+  reverse?: boolean;
+}
+
+export const VStack: React.FC<VStackProps> = ({ reverse, ...rest }) => {
+  return <Stack {...rest} direction={reverse ? 'column-reverse' : 'column'} />;
+};

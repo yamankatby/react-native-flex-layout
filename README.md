@@ -11,11 +11,11 @@ npm install react-native-flex-layout
 ## Usage
 
 ```js
-import { multiply } from "react-native-flex-layout";
+import { Flex } from "react-native-flex-layout";
 
-// ...
-
-const result = await multiply(3, 7);
+const App = () => {
+  return <Flex fill center />;
+};
 ```
 
 ## Contributing
