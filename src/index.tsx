@@ -8,6 +8,8 @@ export {
   notFirstChild,
   notLastChild,
   lastChild,
+  odd,
+  even,
 } from './Selector';
 export { default as Spacer, SpacerProps } from './Spacer';
 export {

@@ -5,7 +5,7 @@ import Flex from './Flex';
 import Selector, { notLastChild } from './Selector';
 import Divider from './Divider';
 import { useSpacing } from './SpacingFuncContext';
-import { getValidChildren } from './getValidChildren';
+import { getValidChildren } from './utilities';
 
 export interface StackProps extends FlexProps {
   /**

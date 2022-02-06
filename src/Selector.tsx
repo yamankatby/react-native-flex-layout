@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 import type { ImageStyle, StyleProp, TextStyle, ViewStyle } from 'react-native';
-import { getValidChildren } from './getValidChildren';
+import { getValidChildren } from './utilities';
 
 type AnyStyle = StyleProp<ViewStyle | TextStyle | ImageStyle>;
 
@@ -38,15 +38,20 @@ const Selector: React.FC<SelectorProps> = ({ style, children }) => {
 
 export default Selector;
 
-export const firstChild = (style: AnyStyle) => (index: number) =>
-  index === 0 ? style : null;
+export const select =
+  (selector: (index: number, length: number) => boolean) =>
+  (style: AnyStyle) =>
+  (index: number, length: number) =>
+    selector(index, length) ? style : null;
 
-export const notFirstChild = (style: AnyStyle) => (index: number) =>
-  index !== 0 ? style : null;
+export const firstChild = select((index) => index === 0);
 
-export const lastChild = (style: AnyStyle) => (index: number, length: number) =>
-  index === length - 1 ? style : null;
+export const notFirstChild = select((index) => index !== 0);
 
-export const notLastChild =
-  (style: AnyStyle) => (index: number, length: number) =>
-    index !== length - 1 ? style : null;
+export const lastChild = select((index, length) => index === length - 1);
+
+export const notLastChild = select((index, length) => index !== length - 1);
+
+export const even = select((index) => index % 2 === 0);
+
+export const odd = select((index) => index % 2 !== 0);
