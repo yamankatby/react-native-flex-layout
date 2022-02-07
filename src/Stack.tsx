@@ -96,7 +96,7 @@ const Stack: React.FC<StackProps> = ({
 
   return (
     <Flex {...rest}>
-      <Selector style={notLastChild(childrenStyle)}>{clones}</Selector>
+      <Selector childrenStyle={notLastChild(childrenStyle)}>{clones}</Selector>
     </Flex>
   );
 };

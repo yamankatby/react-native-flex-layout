@@ -2,20 +2,26 @@ import React, { useMemo } from 'react';
 import type { ImageStyle, StyleProp, TextStyle, ViewStyle } from 'react-native';
 import { getValidChildren } from './utilities';
 
-type AnyStyle = StyleProp<ViewStyle | TextStyle | ImageStyle>;
+type Style = StyleProp<ViewStyle | TextStyle | ImageStyle>;
 
-type ChildStyle = AnyStyle | ((index: number, length: number) => AnyStyle);
+type ChildrenStyle = Style | ((index: number, length: number) => Style);
 
-type ChildStyleProp = ChildStyle | Array<ChildStyle>;
+type ChildrenStyleProp = ChildrenStyle | Array<ChildrenStyleProp>;
 
 export interface SelectorProps {
-  style?: ChildStyleProp;
+  /**
+   * A style object to apply to each child.
+   */
+  childrenStyle?: ChildrenStyleProp;
 }
 
-const Selector: React.FC<SelectorProps> = ({ style, children }) => {
+const Selector: React.FC<SelectorProps> = ({ childrenStyle, children }) => {
   const styles = useMemo(
-    () => (Array.isArray(style) ? style.flat(Infinity) : [style]),
-    [style]
+    () =>
+      Array.isArray(childrenStyle)
+        ? childrenStyle.flat(Infinity)
+        : [childrenStyle],
+    [childrenStyle]
   );
 
   const validChildren = getValidChildren(children);
@@ -26,8 +32,10 @@ const Selector: React.FC<SelectorProps> = ({ style, children }) => {
         React.cloneElement(child, {
           style: [
             child.props.style,
-            styles.map((s) =>
-              typeof s === 'function' ? s(index, validChildren.length) : s
+            styles.map((style) =>
+              typeof style === 'function'
+                ? style(index, validChildren.length)
+                : style
             ),
           ],
         })
@@ -40,7 +48,7 @@ export default Selector;
 
 export const select =
   (selector: (index: number, length: number) => boolean) =>
-  (style: AnyStyle) =>
+  (style: Style) =>
   (index: number, length: number) =>
     selector(index, length) ? style : null;
 
