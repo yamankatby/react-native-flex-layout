@@ -16,15 +16,19 @@ export {
 } from './Selector';
 export type { SelectorProps } from './Selector';
 export {
-  Spacing,
-  SpacingFunc,
   defaultSpacingFunc,
   SpacingFuncContext,
   useSpacingFunc,
   useSpacing,
-  SpacingFuncProviderProps,
   SpacingFuncProvider,
+} from './SpacingFuncContext';
+export type {
+  SpacingFuncProviderProps,
+  Spacing,
+  SpacingFunc,
 } from './SpacingFuncContext';
 export { default as Stack, HStack, VStack } from './Stack';
 export type { StackProps, HStackProps, VStackProps } from './Stack';
+export { default as Wrap } from './Wrap';
+export type { WrapProps } from './Wrap';
 export { getValidChildren } from './utilities';
