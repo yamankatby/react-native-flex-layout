@@ -16,8 +16,6 @@ import { Flex, Spacer } from 'react-native-flex-layout';
 
 ## Props API
 
----
-
 #### `fill`
 
 Shorthand for the `flex` style property.
