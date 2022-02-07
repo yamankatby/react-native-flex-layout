@@ -27,13 +27,13 @@ export interface FlexProps extends BoxProps {
 
   /**
    * Shorthand for the `justifyContent` style property.
-   * If `center` prop is set to `true`, `justifyContent` will be set to `center`.
+   * If `center` prop is set to `true`, `justifyContent` will be forced to `center`.
    */
   justify?: 'start' | 'end' | 'center' | 'between' | 'around' | 'evenly';
 
   /**
    * Shorthand for the `alignItems` style property.
-   * If `center` prop is set to `true`, `alignItems` will be set to `center`.
+   * If `center` prop is set to `true`, `alignItems` will be forced to `center`.
    */
   items?: 'start' | 'end' | 'center' | 'stretch' | 'baseline';
 

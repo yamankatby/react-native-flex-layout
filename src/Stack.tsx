@@ -24,7 +24,7 @@ export interface StackProps extends FlexProps, SelectorProps {
   divider?: React.ReactElement;
 
   /**
-   * The style of the divider.
+   * A style object to apply to each divider.
    */
   dividerStyle?: StyleProp<ViewStyle>;
 
