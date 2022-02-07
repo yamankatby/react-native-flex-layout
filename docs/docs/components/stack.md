@@ -14,6 +14,27 @@ import { Stack, HStack, VStack } from 'react-native-flex-layout';
 - **HStack:** Shorthand for `<Stack direction="row" />`.
 - **VStack:** Shorthand for `<Stack direction="column" />`.
 
+## Usage
+
+To stack elements in horizontal or vertical direction only, use the `HStack` or `VStack` components. You can also use
+the `Stack` component as well and pass the `direction` prop.
+
+### Adding dividers
+
+In some scenarios, you may want to add dividers between stacked elements. Pass the divider prop and set its value
+to `true` or any custom React element.
+
+### Stack items horizontally
+
+Pass the `direction` and set it to `row`. Optionally, you can use `align` and `justify` to adjust the alignment and
+distribution of the items.
+
+### Notes on Stack vs Flex
+
+Stack's primary use case is to lay items out and control the spacing between each item. If you have a more complicated
+use case, such as changing the margin on the last child, you can combine `Stack` and `Flex` and
+use `justify-content: space-between` for more control of the layout.
+
 ## Props API
 
 ### Stack Props

@@ -4,11 +4,42 @@ sidebar_position: 1
 
 # Box
 
+The `Box` component serves as a wrapper component for most of the styling properties.
+
 ## Import
 
 ```js
 import { Box } from 'react-native-flex-layout';
 ```
+
+## Usage
+
+Here are some helpful shorthand props:
+
+- `h` is `height`
+- `minH` is `minHeight`
+- `maxH` is `maxHeight`
+- `w` is `width`
+- `minW` is `minWidth`
+- `maxW` is `maxWidth`
+- `m` is `margin`
+- `mt` is `marginTop`
+- `mr` is `marginRight`
+- `mb` is `marginBottom`
+- `ml` is `marginLeft`
+- `ms` is `marginStart`
+- `me` is `marginEnd`
+- `mh` is `marginHorizontal`
+- `mv` is `marginVertical`
+- `p` is `padding`
+- `pt` is `paddingTop`
+- `pr` is `paddingRight`
+- `pb` is `paddingBottom`
+- `pl` is `paddingLeft`
+- `ps` is `paddingStart`
+- `pe` is `paddingEnd`
+- `ph` is `paddingHorizontal`
+- `pv` is `paddingVertical`
 
 ## Props API
 
