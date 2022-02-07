@@ -1,17 +1,22 @@
-export { default as Box, BoxProps } from './Box';
-export { default as Divider, DividerProps } from './Divider';
-export { default as Flex, FlexProps } from './Flex';
+export { default as Box } from './Box';
+export type { BoxProps } from './Box';
+export { default as Divider } from './Divider';
+export type { DividerProps } from './Divider';
+export { default as Flex } from './Flex';
+export type { FlexProps } from './Flex';
 export {
   default as Selector,
-  SelectorProps,
-  firstChild,
+  select,
+  odd,
+  even,
   notFirstChild,
   notLastChild,
   lastChild,
-  odd,
-  even,
+  firstChild,
 } from './Selector';
-export { default as Spacer, SpacerProps } from './Spacer';
+export type { SelectorProps } from './Selector';
+export { default as Spacer } from './Spacer';
+export type { SpacerProps } from './Spacer';
 export {
   Spacing,
   SpacingFunc,
@@ -22,11 +27,6 @@ export {
   SpacingFuncProviderProps,
   SpacingFuncProvider,
 } from './SpacingFuncContext';
-export {
-  default as Stack,
-  StackProps,
-  HStack,
-  HStackProps,
-  VStack,
-  VStackProps,
-} from './Stack';
+export { default as Stack, HStack, VStack } from './Stack';
+export type { StackProps, HStackProps, VStackProps } from './Stack';
+export { getValidChildren } from './utilities';

@@ -1,38 +1,44 @@
-import React from 'react';
-import { StyleProp, View, ViewStyle } from 'react-native';
+import React, { useMemo } from 'react';
+import type { BoxProps } from './Box';
+import Box from './Box';
 
-export interface DividerProps {
-  color?: string | undefined;
+export interface DividerProps extends BoxProps {
+  /**
+   * The orientation of the divider.
+   *
+   * @default 'horizontal'
+   */
+  orientation?: 'horizontal' | 'vertical';
 
-  inset?: number | undefined;
+  /**
+   * The thickness of the divider.
+   *
+   * @default 1
+   */
+  thickness?: number;
 
-  leadingInset?: number | undefined;
-
-  trailingInset?: number | undefined;
-
-  style?: StyleProp<ViewStyle> | undefined;
+  /**
+   * The color of the divider.
+   *
+   * @default '#E0E0E0'
+   */
+  color?: string;
 }
 
 const Divider: React.FC<DividerProps> = ({
-  color,
-  inset,
-  leadingInset,
-  trailingInset,
+  orientation = 'horizontal',
+  thickness = 1,
+  color = '#E0E0E0',
   style,
+  ...rest
 }) => {
-  return (
-    <View
-      style={[
-        {
-          height: 1,
-          backgroundColor: color || 'gray',
-          marginStart: inset ?? leadingInset,
-          marginEnd: inset ?? trailingInset,
-        },
-        style,
-      ]}
-    />
-  );
+  const dividerStyle = useMemo(() => {
+    if (orientation === 'horizontal')
+      return { height: thickness, backgroundColor: color };
+    else return { width: thickness, backgroundColor: color };
+  }, [orientation, thickness, color]);
+
+  return <Box style={[dividerStyle, style]} {...rest} />;
 };
 
 export default Divider;
