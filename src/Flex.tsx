@@ -187,3 +187,7 @@ const Flex: React.FC<FlexProps> = ({
 };
 
 export default Flex;
+
+export const Spacer: React.FC<FlexProps> = (props) => {
+  return <Flex fill self="stretch" {...props} />;
+};
