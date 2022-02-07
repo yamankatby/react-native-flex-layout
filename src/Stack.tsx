@@ -45,15 +45,18 @@ const Stack: React.FC<StackProps> = ({
 }) => {
   const spacingValue = useSpacing(spacing);
 
+  const direction = useMemo(() => {
+    return rest.inline ? 'row' : rest.direction || 'column';
+  }, [rest.inline, rest.direction]);
+
   const childrenStyle = useMemo(() => {
-    const dir = rest.inline ? 'row' : rest.direction || 'column';
     return {
       'column': { marginBottom: spacingValue },
       'row': { marginEnd: spacingValue },
       'column-reverse': { marginTop: spacingValue },
       'row-reverse': { marginStart: spacingValue },
-    }[dir];
-  }, [spacingValue, rest.inline, rest.direction]);
+    }[direction];
+  }, [spacingValue, direction]);
 
   const shouldUseChildren = !shouldWrapChildren && !divider;
 
@@ -72,7 +75,13 @@ const Stack: React.FC<StackProps> = ({
         const dividerElement = React.isValidElement(divider) ? (
           divider
         ) : (
-          <Divider />
+          <Divider
+            orientation={
+              direction === 'row' || direction === 'row-reverse'
+                ? 'vertical'
+                : 'horizontal'
+            }
+          />
         );
 
         const clonedDivider = React.cloneElement(dividerElement, {
