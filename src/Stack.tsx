@@ -2,12 +2,13 @@ import React, { useMemo } from 'react';
 import { StyleProp, View, ViewStyle } from 'react-native';
 import type { FlexProps } from './Flex';
 import Flex from './Flex';
+import type { SelectorProps } from './Selector';
 import Selector, { notLastChild } from './Selector';
 import Divider from './Divider';
 import { useSpacing } from './SpacingFuncContext';
 import { getValidChildren } from './utilities';
 
-export interface StackProps extends FlexProps {
+export interface StackProps extends FlexProps, SelectorProps {
   /**
    * The spacing between items in the stack.
    *
@@ -40,6 +41,7 @@ const Stack: React.FC<StackProps> = ({
   divider = false,
   dividerStyle,
   shouldWrapChildren = false,
+  childrenStyle,
   children,
   ...rest
 }) => {
@@ -49,13 +51,17 @@ const Stack: React.FC<StackProps> = ({
     return rest.inline ? 'row' : rest.direction || 'column';
   }, [rest.inline, rest.direction]);
 
-  const childrenStyle = useMemo(() => {
-    return {
-      'column': { marginBottom: spacingValue },
-      'row': { marginEnd: spacingValue },
-      'column-reverse': { marginTop: spacingValue },
-      'row-reverse': { marginStart: spacingValue },
-    }[direction];
+  const spacingStyle = useMemo(() => {
+    switch (direction) {
+      case 'column':
+        return { marginBottom: spacingValue };
+      case 'row':
+        return { marginEnd: spacingValue };
+      case 'column-reverse':
+        return { marginTop: spacingValue };
+      case 'row-reverse':
+        return { marginStart: spacingValue };
+    }
   }, [spacingValue, direction]);
 
   const shouldUseChildren = !shouldWrapChildren && !divider;
@@ -96,7 +102,9 @@ const Stack: React.FC<StackProps> = ({
 
   return (
     <Flex {...rest}>
-      <Selector childrenStyle={notLastChild(childrenStyle)}>{clones}</Selector>
+      <Selector childrenStyle={[notLastChild(spacingStyle), childrenStyle]}>
+        {clones}
+      </Selector>
     </Flex>
   );
 };
