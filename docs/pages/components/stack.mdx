@@ -1,7 +1,4 @@
----
-title: Stack
-sidebar_position: 3
----
+import PropsTable from "../../components/PropsTable";
 
 # Stack
 
@@ -42,66 +39,56 @@ use `justify-content: space-between` for more control of the layout.
 
 ### Stack Props
 
-#### `spacing`
-
-The spacing between items in the stack.
-
-**Type:** `Spacing`
-
-**Default:** `0`
-
----
-
-#### `divider`
-
-If `true`, each stack item will show a divider.
-
-**Type:** `React.ReactElement`
-
-**Default:** `false`
-
----
-
-#### `dividerStyle`
-
-A style object to apply to each divider.
-
-**Type:** `StyleProp<ViewStyle>`
-
----
-
-#### `shouldWrapChildren`
-
-If `true`, the children will be wrapped in a `Box` and the `Box` will take the spacing properties.
-
-**Type:** `boolean`
-
-**Default:** `false`
-
----
-
-`...FlexProps` `...SelectorProps`
+<PropsTable
+  props={[
+    { name: 'spacing', description: 'The spacing between items in the stack.', type: 'Spacing', default: '0' },
+    {
+      name: 'divider',
+      description: 'If `true`, each stack item will show a divider.',
+      type: 'React.ReactElement',
+      default: 'false'
+    },
+    {
+      name: 'dividerStyle',
+      description: 'A style object to apply to each divider.',
+      type: 'StyleProp<ViewStyle>',
+      default: 'undefined'
+    },
+    {
+      name: 'shouldWrapChildren',
+      description: 'If `true`, the children will be wrapped in a `Box` and the `Box` will take the spacing properties.',
+      type: 'boolean',
+      default: 'false'
+    },
+  ]}
+/>
 
 ### HStack Props
 
-#### `reverse`
-
-Shorthand for `{ flexDirection: 'row-reverse' }`.
-
-**Type:** `boolean`
-
-**Default:** `false`
+<PropsTable
+  props={[
+    {
+      name: 'reverse',
+      description: 'Shorthand for `{ flexDirection: \'row-reverse\' }`.',
+      type: 'boolean',
+      default: 'false'
+    },
+  ]}
+/>
 
 `...StackProps`
 
 ### VStack Props
 
-#### `reverse`
-
-Shorthand for `{ flexDirection: 'column-reverse' }`.
-
-**Type:** `boolean`
-
-**Default:** `false`
+<PropsTable
+  props={[
+    {
+      name: 'reverse',
+      description: 'Shorthand for `{ flexDirection: \'column-reverse\' }`.',
+      type: 'boolean',
+      default: 'false'
+    },
+  ]}
+/>
 
 `...StackProps`

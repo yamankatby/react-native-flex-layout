@@ -1,7 +1,4 @@
----
-title: Selector
-sidebar_position: 5
----
+import PropsTable from "../../components/PropsTable";
 
 # Selector
 
@@ -67,8 +64,13 @@ Selects all children that match the given selector.
 
 ## Props API
 
-`childrenStyle`
-
-A style object to apply to each child.
-
-**Type:** `StyleProp<ViewStyle | TextStyle | ImageStyle`
+<PropsTable
+  props={[
+    {
+      name: 'childrenStyle',
+      description: 'A style object to apply to each child.',
+      type: 'StyleProp<ViewStyle | TextStyle | ImageStyle>',
+      required: false
+    },
+  ]}
+/>

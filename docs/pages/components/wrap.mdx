@@ -1,7 +1,4 @@
----
-title: Wrap
-sidebar_position: 4
----
+import PropsTable from "../../components/PropsTable";
 
 # Wrap
 
@@ -33,24 +30,21 @@ Pass the `justify` prop to change the alignment of the child along the main axis
 
 ## Props API
 
-#### `spacing`
-
-The space between each child (even if it wraps).
-
-**Type:** `Spacing`
-
-**Default:** `0`
-
----
-
-#### `shouldWrapChildren`
-
-If `true`, the children will be wrapped in a `Box` and the `Box` will take the spacing properties.
-
-**Type:** `boolean`
-
-**Default:** `false`
-
----
+<PropsTable
+  props={[
+    {
+      name: 'spacing',
+      description: 'The space between each child (even if it wraps)',
+      type: 'Spacing',
+      default: '0'
+    },
+    {
+      name: 'shouldWrapChildren',
+      description: 'If `true`, the children will be wrapped in a `Box` and the `Box` will take the spacing properties',
+      type: 'boolean',
+      default: 'false'
+    }
+  ]}
+/>
 
 `...FlexProps` `...SelectorProps`
