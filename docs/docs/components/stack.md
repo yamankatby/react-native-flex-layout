@@ -4,6 +4,8 @@ sidebar_position: 3
 
 # Stack
 
+Stack is a layout component that makes it easy to stack elements together and apply a space between them.
+
 ## Import
 
 ```js

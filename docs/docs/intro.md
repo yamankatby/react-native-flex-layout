@@ -2,46 +2,75 @@
 sidebar_position: 1
 ---
 
-# Tutorial Intro
+# Get Started
 
-Let's discover **Docusaurus in less than 5 minutes**.
+A set of layout primitives that make it super easy to manage your app's layout.
 
-## Getting Started
+## Installation
 
-Get started by **creating a new site**.
-
-Or **try Docusaurus immediately** with **[docusaurus.new](https://docusaurus.new)**.
-
-### What you'll need
-
-- [Node.js](https://nodejs.org/en/download/) version 14 or above:
-  - When installing Node.js, you are recommended to check all checkboxes related to dependencies.
-
-## Generate a new site
-
-Generate a new Docusaurus site using the **classic template**.
-
-The classic template will automatically be added to your project after you run the command:
-
-```bash
-npm init docusaurus@latest my-website classic
+```bash npm2yarn
+npm install react-native-flex-layout
 ```
 
-You can type this command into Command Prompt, Powershell, Terminal, or any other integrated terminal of your code editor.
+## Import Components
 
-The command also installs all necessary dependencies you need to run Docusaurus.
-
-## Start your site
-
-Run the development server:
-
-```bash
-cd my-website
-npm run start
+```js
+import { Box, Flex, Stack, Wrap, Selector } from 'react-native-flex-layout';
 ```
 
-The `cd` command changes the directory you're working with. In order to work with your newly created Docusaurus site, you'll need to navigate the terminal there.
+## Usage
 
-The `npm run start` command builds your website locally and serves it through a development server, ready for you to view at http://localhost:3000/.
+### Box
 
-Open `docs/intro.md` (this page) and edit some lines: the site **reloads automatically** and displays your changes.
+The `Box` component serves as a wrapper component for most of the styling properties.
+
+```jsx
+<Box h={50} w={50} m={2}>
+  <Text>Hello World</Text>
+</Box>
+```
+
+### Flex
+
+Flex is a container view extends React Native's flex-box properties and comes with helpful style shorthands.
+
+```jsx
+<Flex fill justify="center" items="center">
+  <Box>Box 1</Box>
+  <Box>Box 2</Box>
+</Flex>
+```
+
+### Stack
+
+Stack is a layout component that makes it easy to stack elements together and apply a space between them.
+
+```jsx
+<Stack spacing={2} divider>
+  <Box>Box 1</Box>
+  <Box>Box 2</Box>
+</Stack>
+```
+
+### Wrap
+
+Wrap is a layout component that adds a defined space between its children. It wraps its children automatically if there
+isn't enough space to fit anymore in the same row.
+
+```jsx
+<Wrap spacing={2}>
+  <Box>Box 1</Box>
+  <Box>Box 2</Box>
+</Wrap>
+```
+
+### Selector
+
+A wrapper component that can be used to apply a style to a subset of its children.
+
+```jsx
+<Selector childrenStyle={{ marginBottom: 20 }}>
+  <Box>Box 1</Box>
+  <Box>Box 2</Box>
+</Selector>
+```
