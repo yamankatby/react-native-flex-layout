@@ -2,10 +2,9 @@
 import remarkFrontmatter from 'remark-frontmatter';
 import { remarkMdxFrontmatter } from 'remark-mdx-frontmatter';
 import MDX from '@next/mdx';
-import rehypeHighlight from 'rehype-highlight';
 import remarkGfm from 'remark-gfm';
-import { parse } from 'acorn';
 import { createVanillaExtractPlugin } from '@vanilla-extract/next-plugin';
+import remarkPrism from 'remark-prism';
 
 const withVanillaExtract = createVanillaExtractPlugin();
 
@@ -44,14 +43,13 @@ const withVanillaExtract = createVanillaExtractPlugin();
 const withMDX = MDX({
   extension: /\.mdx?$/,
   options: {
-    remarkPlugins: [remarkFrontmatter, remarkMdxFrontmatter,  remarkGfm],
-    rehypePlugins: [rehypeHighlight],
-  },
+    remarkPlugins: [remarkFrontmatter, remarkMdxFrontmatter, remarkGfm, remarkPrism]
+  }
 });
 export default withVanillaExtract(withMDX({
   pageExtensions: ['tsx', 'ts', 'js', 'jsx', 'md', 'mdx'],
   reactStrictMode: true,
   experimental: {
-    scrollRestoration: true,
-  },
+    scrollRestoration: true
+  }
 }));
