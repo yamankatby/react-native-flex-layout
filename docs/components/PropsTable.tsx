@@ -16,7 +16,7 @@ const PropsTable: React.FC<PropsTableProps> = ({ props }) => {
       </thead>
 
       <tbody>
-      {props.map(prop => (
+      {props.map((prop: any) => (
         <tr key={prop.name}>
           <td>{prop.name}</td>
           {/*<td>{prop.description}</td>*/}
