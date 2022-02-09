@@ -15,6 +15,7 @@ import {
   ViewBoardsIcon,
   ViewGridIcon,
 } from "@heroicons/react/outline";
+import Layout from "../components/Layout";
 
 const navigation = [
   { label: "Overview", path: "/" },
@@ -64,13 +65,13 @@ function Pager() {
   const prevRoute = useMemo(
     () =>
       navigation[navigation.findIndex((route) => route.path === asPath) - 1],
-    [asPath]
+    [asPath],
   );
 
   const nextRoute = useMemo(
     () =>
       navigation[navigation.findIndex((route) => route.path === asPath) + 1],
-    [asPath]
+    [asPath],
   );
 
   return (
@@ -160,7 +161,8 @@ function Footer() {
 function SidebarItem({ title, href, icon }) {
   return (
     <Link href={href}>
-      <a className="group block h-12 rounded-lg mx-3 px-3 text-gray-700 hover:text-gray-900 hover:bg-gray-50 flex justify-between items-center">
+      <a
+        className="group block h-12 rounded-lg mx-3 px-3 text-gray-700 hover:text-gray-900 hover:bg-gray-50 flex justify-between items-center">
         <div className="group-hover:underline">{title}</div>
         {icon && (
           <div className="w-8 h-8 flex justify-center items-center bg-primary text-white rounded-lg">
@@ -316,4 +318,6 @@ function MyApp({ Component, pageProps }: AppProps) {
   );
 }
 
-export default MyApp;
+export default function Appp() {
+  return <Layout />
+};
