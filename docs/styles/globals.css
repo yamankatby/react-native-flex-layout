@@ -105,3 +105,11 @@ pre[class^='language-diff-'] {
 pre[class^='language-diff-'] > code {
   @apply flex-none min-w-full;
 }
+
+.DocSearch-Button {
+  @apply w-full h-full m-0 px-3 rounded-lg !important;
+}
+
+.DocSearch-Button-Placeholder {
+  @apply pl-3 !important;
+}

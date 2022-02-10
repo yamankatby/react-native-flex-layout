@@ -8,6 +8,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@docsearch/react": "^3.0.0-alpha.50",
     "@heroicons/react": "^1.0.5",
     "@next/mdx": "^12.0.10",
     "@vanilla-extract/next-plugin": "^2.0.1",
