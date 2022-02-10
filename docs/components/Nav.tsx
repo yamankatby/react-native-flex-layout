@@ -1,31 +1,24 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import Link from "next/link";
+import { useTheme } from "next-themes";
+import { MoonIcon, SunIcon } from "@heroicons/react/outline";
 import Logo from "./Logo";
 import GitHub from "./GitHub";
 import Twitter from "./Twitter";
-import { MoonIcon, SunIcon } from "@heroicons/react/outline";
 
 const TWITTER_URL = "https://twitter.com/rn_material";
 const GITHUB_URL = "https://github.com/yamankatby/react-native-flex-layout";
 
 const Nav: React.FC = () => {
-  const [dark, setDark] = useState(() => {
-    if (typeof window === "undefined") return false;
-    const dark = window.localStorage.getItem("dark");
-    if (dark) return dark;
-    return window.matchMedia("(prefers-color-scheme: dark)").matches;
-  });
+  const { theme, setTheme } = useTheme()
 
   useEffect(() => {
     if (typeof window === "undefined") return;
-    if (dark) {
-      document.body.classList.add("dark", "bg-gray-900", "text-white");
-      localStorage.setItem("dark", "true");
-    } else {
-      document.body.classList.remove("dark", "bg-gray-900", "text-white");
-      localStorage.setItem("dark", "false");
-    }
-  }, [dark]);
+
+    const classList = ["dark", "bg-gray-900", "text-white"];
+    if (theme === "dark") document.body.classList.add(...classList);
+    else document.body.classList.remove(...classList);
+  }, [theme]);
 
   return (
     <nav
@@ -62,9 +55,9 @@ const Nav: React.FC = () => {
         </a>
         <button
           className="w-10 h-10 ml-auto flex justify-center items-center hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg"
-          onClick={() => setDark((prevState) => !prevState)}
+          onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
         >
-          {dark ? <SunIcon className="w-5" /> : <MoonIcon className="w-5" />}
+          {theme === 'dark' ? <SunIcon className="w-5" /> : <MoonIcon className="w-5" />}
         </button>
       </div>
     </nav>
