@@ -1,5 +1,3 @@
-import PropsTable from "../../components/PropsTable";
-
 # Selector
 
 A wrapper component that can be used to apply a style to a subset of its children.

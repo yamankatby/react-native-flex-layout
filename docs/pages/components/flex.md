@@ -12,7 +12,7 @@ import { Flex, Spacer } from 'react-native-flex-layout';
 
 - **Flex:** A `Box` with shorthands for `flex` properties.
 - **Spacer:** Creates an adjustable, empty space that can be used to tune the spacing between child elements
-within `Flex`.
+  within `Flex`.
 
 ## Usage
 

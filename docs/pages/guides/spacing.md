@@ -2,7 +2,8 @@
 
 `Spacing` is an easy way to customize the global spacing and sizing scale for your project.
 
-By default, these spacing value can be referenced by the `height`, `width` `padding`, `margin`, and `top`, `left`, `right`, `bottom` styles.
+By default, these spacing value can be referenced by the `height`, `width` `padding`, `margin`, and `top`, `left`
+, `right`, `bottom` styles.
 
 This is how spacing works by default:
 
@@ -12,7 +13,9 @@ This is how spacing works by default:
 
 This is fine for most cases, however, there are some cases where you may want to customize the spacing behavior.
 
-For example, you may want to use a custom spacing multiplier (e.g. Material Design uses multiples of `8` to layout elements) or you may want to use a different unit of measurement (e.g. `rem` instead of `px` in case your app works on web).
+For example, you may want to use a custom spacing multiplier (e.g. Material Design uses multiples of `8` to layout
+elements) or you may want to use a different unit of measurement (e.g. `rem` instead of `px` in case your app works on
+web).
 
 To do this, you can wrap your app in a `SpacingFuncProvider` component and pass in a `spacingFunc` prop.
 

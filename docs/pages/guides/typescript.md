@@ -13,7 +13,8 @@ import {
 } from "react-native-flex-layout";
 ```
 
-You can use these types with your own custom components. For example, if you want to support layout props in addition to your own custom props:
+You can use these types with your own custom components. For example, if you want to support layout props in addition to
+your own custom props:
 
 ```tsx
 import { Stack, StackProps } from "react-native-flex-layout";
