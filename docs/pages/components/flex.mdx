@@ -37,51 +37,21 @@ While you can pass the verbose props, using the shorthand can save you some time
 
 As an alternative to `Stack`, you can combine `Flex` and `Spacer` to create stackable and responsive layouts.
 
-## Props API
+## Props
 
-<PropsTable
-  props={[
-    { name: 'fill', description: 'Shorthand for the `flex` style property.', type: 'boolean | number' },
-    { name: 'inline', description: 'Shorthand for `{ flexDirection: "row" }`.', type: 'boolean' },
-    {
-      name: 'center',
-      description: 'Shorthand for `{ justifyContent: "center", alignItems: "center" }`.',
-      type: 'boolean'
-    },
-    {
-      name: 'direction',
-      description: 'Shorthand for the `flexDirection` style property.',
-      type: 'row | column | row-reverse | column-reverse'
-    },
-    {
-      name: 'justify',
-      description: 'Shorthand for the `justifyContent` style property.',
-      type: 'start | end | center | between | around | evenly'
-    },
-    {
-      name: 'items',
-      description: 'Shorthand for the `alignItems` style property.',
-      type: 'start | end | center | stretch | baseline'
-    },
-    {
-      name: 'self',
-      description: 'Shorthand for the `alignSelf` style property.',
-      type: 'auto | start | end | center | stretch | baseline'
-    },
-    {
-      name: 'content',
-      description: 'Shorthand for the `alignContent` style property.',
-      type: 'start | end | center | stretch | between | around'
-    },
-    {
-      name: 'wrap',
-      description: 'Shorthand for the `flexWrap` style property.',
-      type: 'boolean | wrap | nowrap | wrap-reverse'
-    },
-    { name: 'basis', description: 'Shorthand for the `flexBasis` style property.', type: 'auto | content | number' },
-    { name: 'grow', description: 'Shorthand for the `flexGrow` style property.', type: 'number' },
-    { name: 'shrink', description: 'Shorthand for the `flexShrink` style property.', type: 'number' },
-  ]}
-/>
+| Prop        | Type                                                              | Description                                                         |
+|-------------|-------------------------------------------------------------------|---------------------------------------------------------------------|
+| `fill`      | `boolean` \| `number`                                             | Shorthand for the `flex` style property.                            |
+| `inline`    | `boolean`                                                         | Shorthand for `{ flexDirection: "row" }`.                           |
+| `center`    | `boolean`                                                         | Shorthand for `{ justifyContent: "center", alignItems: "center" }`. |
+| `direction` | `row` \| `column`                                                 | Shorthand for the `flexDirection` style property.                   |
+| `justify`   | `start` \| `end`                                                  | Shorthand for the `justifyContent` style property.                  |
+| `items`     | `start` \| `end`                                                  | Shorthand for the `alignItems` style property.                      |
+| `self`      | `auto` \| `start` \| `end` \| `center` \| `stretch` \| `baseline` | Shorthand for the `alignSelf` style property.                       |
+| `content`   | `start` \| `end`                                                  | Shorthand for the `alignContent` style property.                    |
+| `wrap`      | `boolean` \| `wrap` \| `nowrap` \| `wrap-reverse`                 | Shorthand for the `flexWrap` style property.                        |
+| `basis`     | `auto` \| `content` \| `number`                                   | Shorthand for the `flexBasis` style property.                       |
+| `grow`      | `number`                                                          | Shorthand for the `flexGrow` style property.                        |
+| `shrink`    | `number`                                                          | Shorthand for the `flexShrink` style property.                      |
 
-`...BoxProps`
+[`...BoxProps`](/components/box#props)

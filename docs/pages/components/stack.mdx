@@ -1,5 +1,3 @@
-import PropsTable from "../../components/PropsTable";
-
 # Stack
 
 Stack is a layout component that makes it easy to stack elements together and apply a space between them.
@@ -35,60 +33,13 @@ Stack's primary use case is to lay items out and control the spacing between eac
 use case, such as changing the margin on the last child, you can combine `Stack` and `Flex` and
 use `justify-content: space-between` for more control of the layout.
 
-## Props API
+## Props
 
-### Stack Props
+| Prop                 | Type                         | Description                                                                                        |
+|----------------------|------------------------------|----------------------------------------------------------------------------------------------------|
+| `spacing`            | [`Spacing`](/guides/spacing) | The spacing between items in the stack.                                                            |
+| `divider`            | `React.ReactElement`         | If `true`, each stack item will show a divider.                                                    |
+| `dividerStyle`       | `StyleProp<ViewStyle>`       | A style object to apply to each divider.                                                           |
+| `shouldWrapChildren` | `boolean`                    | If `true`, the children will be wrapped in a `Box` and the `Box` will take the spacing properties. |
 
-<PropsTable
-  props={[
-    { name: 'spacing', description: 'The spacing between items in the stack.', type: 'Spacing', default: '0' },
-    {
-      name: 'divider',
-      description: 'If `true`, each stack item will show a divider.',
-      type: 'React.ReactElement',
-      default: 'false'
-    },
-    {
-      name: 'dividerStyle',
-      description: 'A style object to apply to each divider.',
-      type: 'StyleProp<ViewStyle>',
-      default: 'undefined'
-    },
-    {
-      name: 'shouldWrapChildren',
-      description: 'If `true`, the children will be wrapped in a `Box` and the `Box` will take the spacing properties.',
-      type: 'boolean',
-      default: 'false'
-    },
-  ]}
-/>
-
-### HStack Props
-
-<PropsTable
-  props={[
-    {
-      name: 'reverse',
-      description: 'Shorthand for `{ flexDirection: \'row-reverse\' }`.',
-      type: 'boolean',
-      default: 'false'
-    },
-  ]}
-/>
-
-`...StackProps`
-
-### VStack Props
-
-<PropsTable
-  props={[
-    {
-      name: 'reverse',
-      description: 'Shorthand for `{ flexDirection: \'column-reverse\' }`.',
-      type: 'boolean',
-      default: 'false'
-    },
-  ]}
-/>
-
-`...StackProps`
+[`...FlexProps`](/components/flex#props) , [`...SelectorProps`](/components/selector#props)
