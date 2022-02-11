@@ -115,11 +115,12 @@ pre[class^='language-diff-'] > code {
 }
 
 .eg {
-  @apply p-4 flex gap-4 bg-gray-50 dark:bg-gray-800/25 border border-black/5 dark:border-white/5 rounded-lg font-mono text-white;
+  @apply p-4 flex flex-wrap gap-4 bg-gray-50 dark:bg-gray-800/25 border border-black/5 dark:border-white/5 rounded-lg font-mono text-white;
 }
 
 .eg > div {
-  @apply p-4 flex-none w-14 h-14 rounded-lg flex items-center justify-center bg-blue-500 shadow-lg;
+  @apply p-4 flex-none h-14 rounded-lg flex items-center justify-center bg-blue-500 shadow-lg;
+  min-width: 3.5rem;
 }
 
 .eg > hr {
