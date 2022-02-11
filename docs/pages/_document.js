@@ -11,7 +11,7 @@ export default function Document() {
 
         <script
           dangerouslySetInnerHTML={{
-            __html: `function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","G-PQTP3P9QQW");`,
+            __html: `function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","G-PQTP3P9QQW");`
           }}
         />
       </Head>
