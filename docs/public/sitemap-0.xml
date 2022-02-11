@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+<url><loc>https://react-native-flex-layout.js.org</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-02-11T12:39:05.393Z</lastmod></url>
+<url><loc>https://react-native-flex-layout.js.org/acknowledgements</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-02-11T12:39:05.393Z</lastmod></url>
+<url><loc>https://react-native-flex-layout.js.org/components/box</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-02-11T12:39:05.393Z</lastmod></url>
+<url><loc>https://react-native-flex-layout.js.org/components/divider</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-02-11T12:39:05.393Z</lastmod></url>
+<url><loc>https://react-native-flex-layout.js.org/components/flex</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-02-11T12:39:05.393Z</lastmod></url>
+<url><loc>https://react-native-flex-layout.js.org/components/selector</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-02-11T12:39:05.393Z</lastmod></url>
+<url><loc>https://react-native-flex-layout.js.org/components/spacer</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-02-11T12:39:05.393Z</lastmod></url>
+<url><loc>https://react-native-flex-layout.js.org/components/stack</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-02-11T12:39:05.394Z</lastmod></url>
+<url><loc>https://react-native-flex-layout.js.org/components/wrap</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-02-11T12:39:05.394Z</lastmod></url>
+<url><loc>https://react-native-flex-layout.js.org/examples/gallery</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-02-11T12:39:05.394Z</lastmod></url>
+<url><loc>https://react-native-flex-layout.js.org/examples/list</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-02-11T12:39:05.394Z</lastmod></url>
+<url><loc>https://react-native-flex-layout.js.org/examples/table</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-02-11T12:39:05.394Z</lastmod></url>
+<url><loc>https://react-native-flex-layout.js.org/examples/tags</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-02-11T12:39:05.394Z</lastmod></url>
+<url><loc>https://react-native-flex-layout.js.org/examples/toolbar</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-02-11T12:39:05.394Z</lastmod></url>
+<url><loc>https://react-native-flex-layout.js.org/getting-started</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-02-11T12:39:05.394Z</lastmod></url>
+<url><loc>https://react-native-flex-layout.js.org/guides/spacing</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-02-11T12:39:05.394Z</lastmod></url>
+<url><loc>https://react-native-flex-layout.js.org/guides/typescript</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-02-11T12:39:05.394Z</lastmod></url>
+</urlset>

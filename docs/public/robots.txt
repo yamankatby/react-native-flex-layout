@@ -1,0 +1,10 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://react-native-flex-layout.js.org/
+
+# Sitemaps
+Sitemap: https://react-native-flex-layout.js.org/sitemap.xml
+Sitemap: https://react-native-flex-layout.js.org/sitemap-0.xml
