@@ -20,7 +20,7 @@ const Layout: React.FC = ({ children }) => {
       <main className="w-full pt-20 lg:pt-0 lg:ml-80 2xl:mr-80">
         <div className="max-w-3xl min-h-screen mx-auto flex flex-col px-4">
           <Breadcrumbs />
-          <article className="flex-1 prose dark:prose-invert">
+          <article className="flex-1 prose dark:prose-invert max-w-none">
             {children}
           </article>
           <Pager />

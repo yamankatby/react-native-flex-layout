@@ -17,10 +17,40 @@ import { Stack, HStack, VStack } from 'react-native-flex-layout';
 To stack elements in horizontal or vertical direction only, use the `HStack` or `VStack` components. You can also use
 the `Stack` component as well and pass the `direction` prop.
 
+<div className="eg">
+  <div>01</div>
+  <div>02</div>
+  <div>03</div>
+</div>
+
+```jsx
+<Stack spacing={16}>
+  <Box w={64} h={64} />
+  <Box w={64} h={64} />
+  <Box w={64} h={64} />
+</Stack>
+```
+
 ### Adding dividers
 
 In some scenarios, you may want to add dividers between stacked elements. Pass the divider prop and set its value
 to `true` or any custom React element.
+
+<div className="not-prose eg flex-col">
+  <div>01</div>
+  <hr />
+  <div>02</div>
+  <hr />
+  <div>03</div>
+</div>
+
+```jsx
+<VStack spacing={16} divider={true}>
+  <Box w={64} h={64} />
+  <Box w={64} h={64} />
+  <Box w={64} h={64} />
+</VStack>
+```
 
 ### Stack items horizontally
 

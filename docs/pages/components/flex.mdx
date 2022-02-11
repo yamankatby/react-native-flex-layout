@@ -1,5 +1,3 @@
-import PropsTable from "../../components/PropsTable";
-
 # Flex
 
 Flex is a container view extends React Native's flex-box properties and comes with helpful style shorthands.
@@ -12,7 +10,7 @@ import { Flex, Spacer } from 'react-native-flex-layout';
 
 - **Flex:** A `Box` with shorthands for `flex` properties.
 - **Spacer:** Creates an adjustable, empty space that can be used to tune the spacing between child elements
-  within `Flex`.
+within `Flex`.
 
 ## Usage
 
@@ -33,9 +31,39 @@ Here are some helpful shorthand props:
 
 While you can pass the verbose props, using the shorthand can save you some time.
 
+<div className="eg">
+  <div>01</div>
+  <div>02</div>
+  <div>03</div>
+</div>
+
+```jsx
+<Flex direction="row">
+  <Box w={56} h={56} />
+  <Box w={56} h={56} ms={16} />
+  <Box w={56} h={56} ms={16} />
+</Flex>
+```
+
+
 ### Using the Spacer
 
 As an alternative to `Stack`, you can combine `Flex` and `Spacer` to create stackable and responsive layouts.
+
+<div className="eg">
+  <div>01</div>
+  <div>02</div>
+  <div className="ml-auto">03</div>
+</div>
+
+```jsx
+<Flex direction="row">
+  <Box w={56} h={56} />
+  <Box w={56} h={56} ms={16} />
+  <Spacer />
+  <Box w={56} h={56} />
+</Flex>
+```
 
 ## Props
 

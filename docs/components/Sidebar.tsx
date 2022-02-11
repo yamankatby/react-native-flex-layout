@@ -66,7 +66,7 @@ const SidebarItem: React.FC<any> = ({ route }) => {
       <Link href={route.path}>
         <a
           className={cx(
-            "mt-px px-3 py-2 flex justify-between items-center rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 hover:underline ",
+            "mt-0.5 px-3 py-2 flex justify-between items-center rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 hover:underline ",
             { "bg-primary bg-opacity-10 hover:bg-primary hover:bg-opacity-20 text-primary": pathname === route.path },
           )}
         >
