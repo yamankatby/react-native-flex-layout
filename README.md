@@ -2,9 +2,8 @@
 
 > Layout primitives for React Native.
 
-[![Latest Stable Version](https://img.shields.io/npm/v/react-native-flex-layout/core.svg)](https://www.npmjs.com/package/react-native-flex-layout/core)
-[![NPM Downloads](https://img.shields.io/npm/dm/react-native-flex-layout/core.svg)](https://www.npmjs.com/package/react-native-flex-layout/core)
-[![GitHub issues](https://img.shields.io/github/issues-raw/yamankatby/react-native-flex-layout.svg)](https://github.com/yamankatby/react-native-flex-layout/issues)
+[![npm](https://img.shields.io/npm/v/react-native-flex-layout)](https://www.npmjs.com/package/react-native-flex-layout)
+[![NPM Downloads](https://img.shields.io/npm/dm/react-native-flex-layout.svg)](https://www.npmjs.com/package/react-native-flex-layout)
 [![Used Languages](https://img.shields.io/github/languages/top/yamankatby/react-native-material.svg)](https://github.com/yamankatby/react-native-flex-layout)
 
 ## Docs
