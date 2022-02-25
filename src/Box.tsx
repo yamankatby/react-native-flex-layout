@@ -242,6 +242,41 @@ export interface BoxProps extends ViewProps {
    * Shorthand for the `borderBottomEndRadius` style property.
    */
   bottomEndRadius?: ViewStyle['borderBottomEndRadius'];
+
+  /**
+   * Shorthand for the `position` style property.
+   */
+  position?: ViewStyle['position'];
+
+  /**
+   * Shorthand for the `top` style property.
+   */
+  top?: ViewStyle['top'];
+
+  /**
+   * Shorthand for the `right` style property.
+   */
+  right?: ViewStyle['right'];
+
+  /**
+   * Shorthand for the `bottom` style property.
+   */
+  bottom?: ViewStyle['bottom'];
+
+  /**
+   * Shorthand for the `left` style property.
+   */
+  left?: ViewStyle['left'];
+
+  /**
+   * Shorthand for the `start` style property.
+   */
+  start?: ViewStyle['start'];
+
+  /**
+   * Shorthand for the `end` style property.
+   */
+  end?: ViewStyle['end'];
 }
 
 const Box: React.FC<BoxProps> = ({
@@ -293,6 +328,13 @@ const Box: React.FC<BoxProps> = ({
   topEndRadius,
   bottomStartRadius,
   bottomEndRadius,
+  position,
+  top,
+  right,
+  bottom,
+  left,
+  start,
+  end,
   style,
   ...rest
 }) => {
@@ -373,7 +415,7 @@ const Box: React.FC<BoxProps> = ({
       paddingEnd,
       paddingHorizontal,
       paddingVertical,
-    ],
+    ]
   );
 
   return <View style={[boxStyle, style]} {...rest} />;
@@ -382,14 +424,6 @@ const Box: React.FC<BoxProps> = ({
 export default Box;
 
 // export interface FlexStyle {
-//   position?: "absolute" | "relative";
-//   bottom?: number | string;
-//   end?: number | string;
-//   left?: number | string;
-//   right?: number | string;
-//   start?: number | string;
-//   top?: number | string;
-//
 //   backgroundColor?: string;
 //   opacity?: number;
 //   testID?: string;
