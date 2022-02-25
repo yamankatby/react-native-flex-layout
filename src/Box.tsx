@@ -277,70 +277,6 @@ export interface BoxProps extends ViewProps {
    * Shorthand for the `end` style property.
    */
   end?: ViewStyle['end'];
-
-  /**
-   * Shorthand for the `flex` style property.
-   * If `true` is passed, the `flex` style property will be set to `1`.
-   */
-  fill?: boolean | number;
-
-  /**
-   * Shorthand for `{ flexDirection: "row" }`.
-   */
-  inline?: boolean;
-
-  /**
-   * Shorthand for `{ justifyContent: "center", alignItems: "center" }`.
-   */
-  center?: boolean;
-
-  /**
-   * Shorthand for the `flexDirection` style property.
-   */
-  direction?: ViewStyle['flexDirection'];
-
-  /**
-   * Shorthand for the `justifyContent` style property.
-   * If `center` prop is set to `true`, `justifyContent` will be forced to `center`.
-   */
-  justify?: 'start' | 'end' | 'center' | 'between' | 'around' | 'evenly';
-
-  /**
-   * Shorthand for the `alignItems` style property.
-   * If `center` prop is set to `true`, `alignItems` will be forced to `center`.
-   */
-  items?: 'start' | 'end' | 'center' | 'stretch' | 'baseline';
-
-  /**
-   * Shorthand for the `alignSelf` style property.
-   */
-  self?: 'auto' | 'start' | 'end' | 'center' | 'stretch' | 'baseline';
-
-  /**
-   * Shorthand for the `alignContent` style property.
-   */
-  content?: 'start' | 'end' | 'center' | 'stretch' | 'between' | 'around';
-
-  /**
-   * Shorthand for the `flexWrap` style property.
-   * If `true` is passed, the `flexWrap` style property will be set to `wrap`.
-   */
-  wrap?: boolean | ViewStyle['flexWrap'];
-
-  /**
-   * Shorthand for the `flexBasis` style property.
-   */
-  basis?: ViewStyle['flexBasis'];
-
-  /**
-   * Shorthand for the `flexGrow` style property.
-   */
-  grow?: ViewStyle['flexGrow'];
-
-  /**
-   * Shorthand for the `flexShrink` style property.
-   */
-  shrink?: ViewStyle['flexShrink'];
 }
 
 const Box: React.FC<BoxProps> = ({
@@ -399,17 +335,6 @@ const Box: React.FC<BoxProps> = ({
   left,
   start,
   end,
-  fill,
-  inline,
-  center,
-  justify,
-  items,
-  self,
-  content,
-  wrap,
-  basis,
-  grow,
-  shrink,
   style,
   ...rest
 }) => {
