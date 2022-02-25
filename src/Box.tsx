@@ -1,127 +1,247 @@
 import React, { useMemo } from 'react';
-import { FlexStyle, View, ViewProps } from 'react-native';
+import { View, ViewProps, ViewStyle } from 'react-native';
 import { useSpacing } from './SpacingFuncContext';
 
 export interface BoxProps extends ViewProps {
   /**
    * Shorthand for the `height` style property.
    */
-  h?: FlexStyle['height'];
+  h?: ViewStyle['height'];
 
   /**
    * Shorthand for the `minHeight` style property.
    */
-  minH?: FlexStyle['minHeight'];
+  minH?: ViewStyle['minHeight'];
 
   /**
    * Shorthand for the `maxHeight` style property.
    */
-  maxH?: FlexStyle['maxHeight'];
+  maxH?: ViewStyle['maxHeight'];
 
   /**
    * Shorthand for the `width` style property.
    */
-  w?: FlexStyle['width'];
+  w?: ViewStyle['width'];
 
   /**
    * Shorthand for the `minWidth` style property.
    */
-  minW?: FlexStyle['minWidth'];
+  minW?: ViewStyle['minWidth'];
 
   /**
    * Shorthand for the `maxWidth` style property.
    */
-  maxW?: FlexStyle['maxWidth'];
+  maxW?: ViewStyle['maxWidth'];
 
   /**
    * Shorthand for the `margin` style property.
    */
-  m?: FlexStyle['margin'];
+  m?: ViewStyle['margin'];
 
   /**
    * Shorthand for the `marginTop` style property.
    */
-  mt?: FlexStyle['marginTop'];
+  mt?: ViewStyle['marginTop'];
 
   /**
    * Shorthand for the `marginRight` style property.
    */
-  mr?: FlexStyle['marginRight'];
+  mr?: ViewStyle['marginRight'];
 
   /**
    * Shorthand for the `marginBottom` style property.
    */
-  mb?: FlexStyle['marginBottom'];
+  mb?: ViewStyle['marginBottom'];
 
   /**
    * Shorthand for the `marginLeft` style property.
    */
-  ml?: FlexStyle['marginLeft'];
+  ml?: ViewStyle['marginLeft'];
 
   /**
    * Shorthand for the `marginStart` style property.
    */
-  ms?: FlexStyle['marginStart'];
+  ms?: ViewStyle['marginStart'];
 
   /**
    * Shorthand for the `marginEnd` style property.
    */
-  me?: FlexStyle['marginEnd'];
+  me?: ViewStyle['marginEnd'];
 
   /**
    * Shorthand for the `marginHorizontal` style property.
    */
-  mh?: FlexStyle['marginHorizontal'];
+  mh?: ViewStyle['marginHorizontal'];
 
   /**
    * Shorthand for the `marginVertical` style property.
    */
-  mv?: FlexStyle['marginVertical'];
+  mv?: ViewStyle['marginVertical'];
 
   /**
    * Shorthand for the `padding` style property.
    */
-  p?: FlexStyle['padding'];
+  p?: ViewStyle['padding'];
 
   /**
    * Shorthand for the `paddingTop` style property.
    */
-  pt?: FlexStyle['paddingTop'];
+  pt?: ViewStyle['paddingTop'];
 
   /**
    * Shorthand for the `paddingRight` style property.
    */
-  pr?: FlexStyle['paddingRight'];
+  pr?: ViewStyle['paddingRight'];
 
   /**
    * Shorthand for the `paddingBottom` style property.
    */
-  pb?: FlexStyle['paddingBottom'];
+  pb?: ViewStyle['paddingBottom'];
 
   /**
    * Shorthand for the `paddingLeft` style property.
    */
-  pl?: FlexStyle['paddingLeft'];
+  pl?: ViewStyle['paddingLeft'];
 
   /**
    * Shorthand for the `paddingStart` style property.
    */
-  ps?: FlexStyle['paddingStart'];
+  ps?: ViewStyle['paddingStart'];
 
   /**
    * Shorthand for the `paddingEnd` style property.
    */
-  pe?: FlexStyle['paddingEnd'];
+  pe?: ViewStyle['paddingEnd'];
 
   /**
    * Shorthand for the `paddingHorizontal` style property.
    */
-  ph?: FlexStyle['paddingHorizontal'];
+  ph?: ViewStyle['paddingHorizontal'];
 
   /**
    * Shorthand for the `paddingVertical` style property.
    */
-  pv?: FlexStyle['paddingVertical'];
+  pv?: ViewStyle['paddingVertical'];
+
+  /**
+   * Shorthand for the `borderStyle` style property.
+   */
+  borderStyle?: ViewStyle['borderStyle'];
+
+  /**
+   * Shorthand for the `borderWidth` style property.
+   */
+  border?: ViewStyle['borderWidth'];
+
+  /**
+   * Shorthand for the `borderTopWidth` style property.
+   */
+  borderTop?: ViewStyle['borderTopWidth'];
+
+  /**
+   * Shorthand for the `borderRightWidth` style property.
+   */
+  borderRight?: ViewStyle['borderRightWidth'];
+
+  /**
+   * Shorthand for the `borderBottomWidth` style property.
+   */
+  borderBottom?: ViewStyle['borderBottomWidth'];
+
+  /**
+   * Shorthand for the `borderLeftWidth` style property.
+   */
+  borderLeft?: ViewStyle['borderLeftWidth'];
+
+  /**
+   * Shorthand for the `borderStartWidth` style property.
+   */
+  borderStart?: ViewStyle['borderStartWidth'];
+
+  /**
+   * Shorthand for the `borderEndWidth` style property.
+   */
+  borderEnd?: ViewStyle['borderEndWidth'];
+
+  /**
+   * Shorthand for the `borderColor` style property.
+   */
+  borderColor?: ViewStyle['borderColor'];
+
+  /**
+   * Shorthand for the `borderTopColor` style property.
+   */
+  borderTopColor?: ViewStyle['borderTopColor'];
+
+  /**
+   * Shorthand for the `borderRightColor` style property.
+   */
+  borderRightColor?: ViewStyle['borderRightColor'];
+
+  /**
+   * Shorthand for the `borderBottomColor` style property.
+   */
+  borderBottomColor?: ViewStyle['borderBottomColor'];
+
+  /**
+   * Shorthand for the `borderLeftColor` style property.
+   */
+  borderLeftColor?: ViewStyle['borderLeftColor'];
+
+  /**
+   * Shorthand for the `borderStartColor` style property.
+   */
+  borderStartColor?: ViewStyle['borderStartColor'];
+
+  /**
+   * Shorthand for the `borderEndColor` style property.
+   */
+  borderEndColor?: ViewStyle['borderEndColor'];
+
+  /**
+   * Shorthand for the `borderRadius` style property.
+   */
+  radius?: ViewStyle['borderRadius'];
+
+  /**
+   * Shorthand for the `borderTopLeftRadius` style property.
+   */
+  topLeftRadius?: ViewStyle['borderTopLeftRadius'];
+
+  /**
+   * Shorthand for the `borderTopRightRadius` style property.
+   */
+  topRightRadius?: ViewStyle['borderTopRightRadius'];
+
+  /**
+   * Shorthand for the `borderBottomLeftRadius` style property.
+   */
+  bottomLeftRadius?: ViewStyle['borderTopLeftRadius'];
+
+  /**
+   * Shorthand for the `borderBottomRightRadius` style property.
+   */
+  bottomRightRadius?: ViewStyle['borderBottomRightRadius'];
+
+  /**
+   * Shorthand for the `borderTopStartRadius` style property.
+   */
+  topStartRadius?: ViewStyle['borderTopStartRadius'];
+
+  /**
+   * Shorthand for the `borderTopEndRadius` style property.
+   */
+  topEndRadius?: ViewStyle['borderTopEndRadius'];
+
+  /**
+   * Shorthand for the `borderBottomStartRadius` style property.
+   */
+  bottomStartRadius?: ViewStyle['borderBottomStartRadius'];
+
+  /**
+   * Shorthand for the `borderBottomEndRadius` style property.
+   */
+  bottomEndRadius?: ViewStyle['borderBottomEndRadius'];
 }
 
 const Box: React.FC<BoxProps> = ({
@@ -149,6 +269,30 @@ const Box: React.FC<BoxProps> = ({
   pe,
   ph,
   pv,
+  borderStyle,
+  border,
+  borderTop,
+  borderRight,
+  borderBottom,
+  borderLeft,
+  borderStart,
+  borderEnd,
+  borderColor,
+  borderTopColor,
+  borderRightColor,
+  borderBottomColor,
+  borderLeftColor,
+  borderStartColor,
+  borderEndColor,
+  radius,
+  topLeftRadius,
+  topRightRadius,
+  bottomLeftRadius,
+  bottomRightRadius,
+  topStartRadius,
+  topEndRadius,
+  bottomStartRadius,
+  bottomEndRadius,
   style,
   ...rest
 }) => {
@@ -229,10 +373,31 @@ const Box: React.FC<BoxProps> = ({
       paddingEnd,
       paddingHorizontal,
       paddingVertical,
-    ]
+    ],
   );
 
   return <View style={[boxStyle, style]} {...rest} />;
 };
 
 export default Box;
+
+// export interface FlexStyle {
+//   position?: "absolute" | "relative";
+//   bottom?: number | string;
+//   end?: number | string;
+//   left?: number | string;
+//   right?: number | string;
+//   start?: number | string;
+//   top?: number | string;
+//
+//   backgroundColor?: string;
+//   opacity?: number;
+//   testID?: string;
+//   backfaceVisibility?: "visible" | "hidden";
+//   aspectRatio?: number;
+//   display?: "none" | "flex";
+//   overflow?: "visible" | "hidden" | "scroll";
+//   zIndex?: number;
+//   elevation?: number;
+//   direction?: "inherit" | "ltr" | "rtl";
+// }

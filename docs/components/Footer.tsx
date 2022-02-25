@@ -1,6 +1,6 @@
 import React from "react"
-import Logo from "./Logo";
 import Link from "next/link";
+import Logo from "./Logo";
 
 const Footer: React.FC = () => (
   <footer className="mt-6 mb-24 flex flex-col items-center">
