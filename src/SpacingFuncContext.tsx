@@ -4,8 +4,7 @@ export type Spacing = number | string | undefined;
 
 export type SpacingFunc = (size?: number | string) => Spacing;
 
-export const defaultSpacingFunc: SpacingFunc = (size) =>
-  typeof size === 'number' ? size * 4 : size;
+export const defaultSpacingFunc: SpacingFunc = (space) => space;
 
 export const SpacingFuncContext = createContext(defaultSpacingFunc);
 
