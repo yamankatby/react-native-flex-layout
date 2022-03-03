@@ -4,6 +4,11 @@ import { useSpacingFunc } from './SpacingFuncContext';
 
 export interface BoxProps extends ViewProps {
   /**
+   * Child to render
+   */
+  as?: React.ReactElement;
+
+  /**
    * Shorthand for the `height` style property.
    */
   h?: ViewStyle['height'];
@@ -300,6 +305,7 @@ export interface BoxProps extends ViewProps {
 }
 
 const Box: React.FC<BoxProps> = ({
+  as,
   h,
   minH,
   maxH,
@@ -491,6 +497,13 @@ const Box: React.FC<BoxProps> = ({
     overflow,
     spacingFunc,
   ]);
+
+  if (as) {
+    return React.cloneElement(as, {
+      style: [boxStyle, style, as.props.style],
+      ...rest,
+    });
+  }
 
   return <View style={[boxStyle, style]} {...rest} />;
 };
