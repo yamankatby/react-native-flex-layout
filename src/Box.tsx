@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 import { View, ViewProps, ViewStyle } from 'react-native';
-import { useSpacing } from './SpacingFuncContext';
+import { useSpacingFunc } from './SpacingFuncContext';
 
 export interface BoxProps extends ViewProps {
   /**
@@ -277,6 +277,26 @@ export interface BoxProps extends ViewProps {
    * Shorthand for the `end` style property.
    */
   end?: ViewStyle['end'];
+
+  /**
+   * Shorthand for the `backgroundColor` style property.
+   */
+  bg?: ViewStyle['backgroundColor'];
+
+  /**
+   * Shorthand for the `opacity` style property.
+   */
+  opacity?: ViewStyle['opacity'];
+
+  /**
+   * Shorthand for the `zIndex` style property.
+   */
+  zIndex?: ViewStyle['zIndex'];
+
+  /**
+   * Shorthand for the `overflow` style property.
+   */
+  overflow?: ViewStyle['overflow'];
 }
 
 const Box: React.FC<BoxProps> = ({
@@ -335,88 +355,142 @@ const Box: React.FC<BoxProps> = ({
   left,
   start,
   end,
+  bg,
+  opacity,
+  zIndex,
+  overflow,
   style,
   ...rest
 }) => {
-  const height = useSpacing(h);
-  const minHeight = useSpacing(minH);
-  const maxHeight = useSpacing(maxH);
-  const width = useSpacing(w);
-  const minWidth = useSpacing(minW);
-  const maxWidth = useSpacing(maxW);
-  const margin = useSpacing(m);
-  const marginTop = useSpacing(mt);
-  const marginRight = useSpacing(mr);
-  const marginBottom = useSpacing(mb);
-  const marginLeft = useSpacing(ml);
-  const marginStart = useSpacing(ms);
-  const marginEnd = useSpacing(me);
-  const marginHorizontal = useSpacing(mh);
-  const marginVertical = useSpacing(mv);
-  const padding = useSpacing(p);
-  const paddingTop = useSpacing(pt);
-  const paddingRight = useSpacing(pr);
-  const paddingBottom = useSpacing(pb);
-  const paddingLeft = useSpacing(pl);
-  const paddingStart = useSpacing(ps);
-  const paddingEnd = useSpacing(pe);
-  const paddingHorizontal = useSpacing(ph);
-  const paddingVertical = useSpacing(pv);
+  const spacingFunc = useSpacingFunc();
 
-  const boxStyle = useMemo(
-    () => ({
-      height,
-      minHeight,
-      maxHeight,
-      width,
-      minWidth,
-      maxWidth,
-      margin,
-      marginTop,
-      marginRight,
-      marginBottom,
-      marginLeft,
-      marginStart,
-      marginEnd,
-      marginHorizontal,
-      marginVertical,
-      padding,
-      paddingTop,
-      paddingRight,
-      paddingBottom,
-      paddingLeft,
-      paddingStart,
-      paddingEnd,
-      paddingHorizontal,
-      paddingVertical,
-    }),
-    [
-      height,
-      minHeight,
-      maxHeight,
-      width,
-      minWidth,
-      maxWidth,
-      margin,
-      marginTop,
-      marginRight,
-      marginBottom,
-      marginLeft,
-      marginStart,
-      marginEnd,
-      marginHorizontal,
-      marginVertical,
-      padding,
-      paddingTop,
-      paddingRight,
-      paddingBottom,
-      paddingLeft,
-      paddingStart,
-      paddingEnd,
-      paddingHorizontal,
-      paddingVertical,
-    ]
-  );
+  const boxStyle = useMemo(() => {
+    const styleObj: ViewStyle = {};
+
+    styleObj.height = spacingFunc(h);
+    styleObj.minHeight = spacingFunc(minH);
+    styleObj.maxHeight = spacingFunc(maxH);
+    styleObj.width = spacingFunc(w);
+    styleObj.minWidth = spacingFunc(minW);
+    styleObj.maxWidth = spacingFunc(maxW);
+    styleObj.margin = spacingFunc(m);
+    styleObj.marginTop = spacingFunc(mt);
+    styleObj.marginRight = spacingFunc(mr);
+    styleObj.marginBottom = spacingFunc(mb);
+    styleObj.marginLeft = spacingFunc(ml);
+    styleObj.marginStart = spacingFunc(ms);
+    styleObj.marginEnd = spacingFunc(me);
+    styleObj.marginHorizontal = spacingFunc(mh);
+    styleObj.marginVertical = spacingFunc(mv);
+    styleObj.padding = spacingFunc(p);
+    styleObj.paddingTop = spacingFunc(pt);
+    styleObj.paddingRight = spacingFunc(pr);
+    styleObj.paddingBottom = spacingFunc(pb);
+    styleObj.paddingLeft = spacingFunc(pl);
+    styleObj.paddingStart = spacingFunc(ps);
+    styleObj.paddingEnd = spacingFunc(pe);
+    styleObj.paddingHorizontal = spacingFunc(ph);
+    styleObj.paddingVertical = spacingFunc(pv);
+
+    styleObj.borderStyle = borderStyle;
+    styleObj.borderWidth = border;
+    styleObj.borderTopWidth = borderTop;
+    styleObj.borderRightWidth = borderRight;
+    styleObj.borderBottomWidth = borderBottom;
+    styleObj.borderLeftWidth = borderLeft;
+    styleObj.borderStartWidth = borderStart;
+    styleObj.borderEndWidth = borderEnd;
+    styleObj.borderColor = borderColor;
+    styleObj.borderTopColor = borderTopColor;
+    styleObj.borderRightColor = borderRightColor;
+    styleObj.borderBottomColor = borderBottomColor;
+    styleObj.borderLeftColor = borderLeftColor;
+    styleObj.borderStartColor = borderStartColor;
+    styleObj.borderEndColor = borderEndColor;
+    styleObj.borderRadius = radius;
+    styleObj.borderTopLeftRadius = topLeftRadius;
+    styleObj.borderTopRightRadius = topRightRadius;
+    styleObj.borderBottomLeftRadius = bottomLeftRadius;
+    styleObj.borderBottomRightRadius = bottomRightRadius;
+    styleObj.borderTopStartRadius = topStartRadius;
+    styleObj.borderTopEndRadius = topEndRadius;
+    styleObj.borderBottomStartRadius = bottomStartRadius;
+    styleObj.borderBottomEndRadius = bottomEndRadius;
+    styleObj.position = position;
+    styleObj.top = top;
+    styleObj.right = right;
+    styleObj.bottom = bottom;
+    styleObj.left = left;
+    styleObj.start = start;
+    styleObj.end = end;
+    styleObj.backgroundColor = bg;
+    styleObj.opacity = opacity;
+    styleObj.zIndex = zIndex;
+    styleObj.overflow = overflow;
+
+    return styleObj;
+  }, [
+    h,
+    minH,
+    maxH,
+    w,
+    minW,
+    maxW,
+    m,
+    mt,
+    mr,
+    mb,
+    ml,
+    ms,
+    me,
+    mh,
+    mv,
+    p,
+    pt,
+    pr,
+    pb,
+    pl,
+    ps,
+    pe,
+    ph,
+    pv,
+    borderStyle,
+    border,
+    borderTop,
+    borderRight,
+    borderBottom,
+    borderLeft,
+    borderStart,
+    borderEnd,
+    borderColor,
+    borderTopColor,
+    borderRightColor,
+    borderBottomColor,
+    borderLeftColor,
+    borderStartColor,
+    borderEndColor,
+    radius,
+    topLeftRadius,
+    topRightRadius,
+    bottomLeftRadius,
+    bottomRightRadius,
+    topStartRadius,
+    topEndRadius,
+    bottomStartRadius,
+    bottomEndRadius,
+    position,
+    top,
+    right,
+    bottom,
+    left,
+    start,
+    end,
+    bg,
+    opacity,
+    zIndex,
+    overflow,
+    spacingFunc,
+  ]);
 
   return <View style={[boxStyle, style]} {...rest} />;
 };
@@ -424,14 +498,11 @@ const Box: React.FC<BoxProps> = ({
 export default Box;
 
 // export interface FlexStyle {
-//   backgroundColor?: string;
-//   opacity?: number;
-//   testID?: string;
 //   backfaceVisibility?: "visible" | "hidden";
 //   aspectRatio?: number;
 //   display?: "none" | "flex";
-//   overflow?: "visible" | "hidden" | "scroll";
-//   zIndex?: number;
 //   elevation?: number;
 //   direction?: "inherit" | "ltr" | "rtl";
 // }
+
+// color, space, size, borderWidth, borderRadius
