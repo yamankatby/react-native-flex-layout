@@ -21,7 +21,7 @@ export interface StackProps extends FlexProps, SelectorProps {
    *
    * @default false
    */
-  divider?: React.ReactElement;
+  divider?: React.ReactElement | boolean;
 
   /**
    * A style object to apply to each divider.
