@@ -1,4 +1,4 @@
-# react-native-flex-layout [![Twitter Follow](https://img.shields.io/twitter/follow/yamankatby?style=social)](https://twitter.com/intent/user?screen_name=yamankatby)
+# react-native-flex-layout
 
 > Layout primitives for React Native.
 
